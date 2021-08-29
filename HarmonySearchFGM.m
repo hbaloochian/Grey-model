@@ -10,24 +10,24 @@ NVAR=4;         %number of variables
 NG=6;           %number of ineguality constraints
 NH=0;           %number of eguality constraints
 MaxItr=5000;    % maximum number of iterations
-HMS=50;          % harmony memory size
+HMS=50;         % harmony memory size
 HMCR=0.7;       % harmony consideration rate  0< HMCR <1
-PARmin=0.4;      % minumum pitch adjusting rate
-PARmax=0.9;      % maximum pitch adjusting rate
-bwmin=0.0001;    % minumum bandwidth
+PARmin=0.4;     % minumum pitch adjusting rate
+PARmax=0.9;     % maximum pitch adjusting rate
+bwmin=0.0001;   % minumum bandwidth
 bwmax=1.0;      % maxiumum bandwidth
-SNUMBER=9;
-
-PVB=[1 SNUMBER;1 SNUMBER;0.0 1;0.0 2];   % range of variables
-IT=0;
-
-PER=2;  %number of Prediction
+SNUMBER=9;      %length of X_0
 
 %********************************************************
 %                  Add your series here  
 X_0 = [1881,2438,2664,2754,2934,2949,2560,2452,2287];
 %********************************************************
 
+SNUMBER=length(X_0);
+PVB=[1 SNUMBER;1 SNUMBER;0.0 1;0.0 2];   % range of variables
+IT=0;
+
+PER=2;  %number of Prediction
 
 % /**** Initiate Matrix ****/
 HM=zeros(HMS,NVAR);
@@ -300,7 +300,3 @@ function val=StopCondition(Itr)
 end
 
 % /*******************************************/
-
-
-
-
